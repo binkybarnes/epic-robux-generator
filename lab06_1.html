@@ -1,0 +1,392 @@
+<head>
+  <title>rat</title>
+  <style>
+    #jumpscareContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 1);
+      z-index: 9999; /* Ensure it covers everything else */
+    }
+
+    #jumpscareGif {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Make sure the GIF covers the container */
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      background-color: #ffdee9;
+      background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+      background-attachment: fixed;
+      cursor: url("./imgs/Inverted_Spear_of_Heaven.png"), auto;
+    }
+    .grid-container {
+      display: grid;
+      justify-content: space-around;
+      grid-template-columns: auto auto auto;
+      gap: 50px;
+      margin-block: 75px 100px;
+    }
+
+    .grid-item {
+      width: 300px;
+      height: 300px;
+      background-color: white;
+      border-radius: 16px;
+
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .noise {
+      z-index: 9999999999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    .wrapper-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      letter-spacing: 30px;
+      font-size: 5rem;
+    }
+
+    .button-gamer {
+      font-size: 2.5rem;
+      padding: 30px;
+    }
+    .button-gamer:hover {
+      cursor: url("./imgs/Inverted_Spear_of_Heaven.png");
+    }
+
+    .wrapper-gaming {
+      display: flex;
+      width: 100vw;
+      justify-content: space-evenly;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    button {
+      padding: 25px 35px;
+
+      /* From https://css.glass */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 5px;
+
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    button.jump {
+      word-spacing: 2px;
+      letter-spacing: 2px;
+    }
+
+    .gojo-wrapper {
+      margin-block: 20px 200px;
+    }
+    #gojo-button {
+      cursor: url("./imgs/Inverted_Spear_of_Heaven.png"), auto;
+      background: transparent transparent;
+      padding: 0;
+    }
+
+    #gojo-img {
+      border-radius: 10px;
+      height: 750px;
+      width: 500px;
+      object-fit: cover;
+
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    #animationContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allow clicks to pass through */
+    }
+
+    .slash {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      background: url("./imgs/slash.gif") no-repeat center center;
+      background-size: contain;
+      transform: translate(-50%, -50%);
+      animation: slash-animation 0.22s linear;
+    }
+
+    @keyframes slash-animation {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5)
+          rotate(var(--random-angle, 0deg));
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1)
+          rotate(calc(var(--random-angle, 0deg) + 45deg));
+      }
+    }
+
+    .twobytwo {
+      margin-block: 100px 100px;
+    }
+    table,
+    th {
+      border: 1px solid black;
+    }
+    th {
+      padding: 10px 10px;
+      font-size: 1.5rem;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="jumpscareContainer">
+    <img
+      id="jumpscareGif"
+      src="./imgs/jumpscare.gif"
+      alt="Jumpscare"
+      style="display: none"
+    />
+  </div>
+  <div class="wrapper-main">
+    <h1 class="title">FANUM TAX</h1>
+    <button class="jump" id="jumpscareButton">
+      <h2>💸 💸 💸 FREE ROBUX 💸 💸 💸</h2>
+    </button>
+    <div class="grid-container">
+      <img class="grid-item" src="./imgs/mrniceguy.jpg" alt="skibidi" />
+      <img
+        class="grid-item"
+        src="https://www.cerealously.net/wp-content/uploads/2024/04/new-ghost-protein-cereal-review-boxes.jpg"
+      />
+      <img
+        class="grid-item"
+        src="https://rgd.mcw.edu/vcmap/img/vcmap_logo_v2.a122e07a.png"
+        alt="hohohoho"
+      />
+    </div>
+    <div class="wrapper-gaming">
+      <a href="https://www.fortnite.com/vbuckscard" target="_blank">
+        <button class="button-gamer">vbocks</button>
+      </a>
+      <a
+        href="https://www.voromotors.com/products/dualtron-x-limited-electric-scooter?variant=42284651282630&currency=USD"
+        target="_blank"
+      >
+        <button class="button-gamer">budget scooter</button>
+      </a>
+      <a href="https://ohio.gov/" target="_blank">
+        <button class="button-gamer">ohio</button>
+      </a>
+    </div>
+
+    <div class="twobytwo">
+      <table>
+        <tr>
+          <th>RAAAAAA</th>
+          <th>lethal company</th>
+        </tr>
+        <tr>
+          <th>rat repellent</th>
+          <th>green smoothie</th>
+        </tr>
+      </table>
+    </div>
+    <div class="gojo-wrapper">
+      <button id="gojo-button">
+        <img id="gojo-img" src="./imgs/gojo_moment.webp" alt="" />
+      </button>
+      <div id="animationContainer"></div>
+    </div>
+  </div>
+
+  <main role="main" class="main-content">
+    <canvas id="noise" class="noise" width="1440" height="823"></canvas>
+  </main>
+
+  <script>
+    const noise = () => {
+      let canvas, ctx;
+      let wWidth, wHeight;
+      let noiseData = [];
+      let frame = 0;
+      let loopTimeout;
+      // Create Noise
+      const createNoise = () => {
+        const idata = ctx.createImageData(wWidth, wHeight);
+        const buffer32 = new Uint32Array(idata.data.buffer);
+        const len = buffer32.length;
+        for (let i = 0; i < len; i++) {
+          if (Math.random() < 0.1) {
+            buffer32[i] = 0xff000000;
+          }
+        }
+        noiseData.push(idata);
+      };
+      // Play Noise
+      const paintNoise = () => {
+        if (frame === 9) {
+          frame = 0;
+        } else {
+          frame++;
+        }
+        ctx.putImageData(noiseData[frame], 0, 0);
+      };
+      // Loop
+      const loop = () => {
+        paintNoise(frame);
+        loopTimeout = window.setTimeout(() => {
+          window.requestAnimationFrame(loop);
+        }, 1000 / 25);
+      };
+      // Setup
+      const setup = () => {
+        wWidth = window.innerWidth;
+        wHeight = window.innerHeight;
+        canvas.width = wWidth;
+        canvas.height = wHeight;
+        for (let i = 0; i < 10; i++) {
+          createNoise();
+        }
+        loop();
+      };
+      // Reset
+      let resizeThrottle;
+      const reset = () => {
+        window.addEventListener(
+          "resize",
+          () => {
+            window.clearTimeout(resizeThrottle);
+            resizeThrottle = window.setTimeout(() => {
+              window.clearTimeout(loopTimeout);
+              setup();
+            }, 200);
+          },
+          false
+        );
+      };
+      // Init
+      const init = (() => {
+        canvas = document.getElementById("noise");
+        ctx = canvas.getContext("2d");
+        setup();
+      })();
+    };
+    noise();
+  </script>
+
+  <script>
+    // script.js
+    document
+      .getElementById("jumpscareButton")
+      .addEventListener("click", function () {
+        console.log("rat");
+        var jumpscareGif = document.getElementById("jumpscareGif");
+        var jumpscareContainer = document.getElementById("jumpscareContainer");
+
+        if (jumpscareContainer.requestFullscreen) {
+          jumpscareContainer.requestFullscreen();
+        } else if (jumpscareContainer.mozRequestFullScreen) {
+          // Firefox
+          jumpscareContainer.mozRequestFullScreen();
+        } else if (jumpscareContainer.webkitRequestFullscreen) {
+          // Chrome, Safari, and Opera
+          jumpscareContainer.webkitRequestFullscreen();
+        } else if (jumpscareContainer.msRequestFullscreen) {
+          // IE/Edge
+          jumpscareContainer.msRequestFullscreen();
+        }
+
+        // Display the GIF
+        jumpscareGif.style.display = "block";
+
+        // Optionally, play a sound
+        var audio = new Audio("./imgs/Xscream.mp3");
+        audio.play();
+
+        // Show the GIF container
+        jumpscareContainer.style.display = "flex";
+
+        // Optionally, hide the GIF after a few seconds
+        setTimeout(function () {
+          jumpscareGif.style.display = "none";
+          jumpscareContainer.style.display = "none";
+        }, 3000); // Adjust the time as needed
+      });
+  </script>
+
+  <script>
+    document
+      .getElementById("gojo-button")
+      .addEventListener("click", function () {
+        var img = document.getElementById("gojo-img");
+        img.setAttribute("src", "./imgs/go_jo.jpg");
+
+        var audio = new Audio("./imgs/stationary-kill_gDwMUvN.mp3");
+        audio.play();
+
+        var animationContainer = document.getElementById("animationContainer");
+        var slash = document.createElement("div");
+        slash.className = "slash";
+
+        // Position the slash at the cursor location
+        slash.style.left = event.clientX + "px";
+        slash.style.top = event.clientY + "px";
+
+        // Generate a random angle between 0 and 360 degrees
+
+        var randomAngle = Math.floor(Math.random() * 360);
+
+        // Set the random angle as a CSS custom property
+        slash.style.setProperty("--random-angle", randomAngle + "deg");
+
+        // Add the slash to the animation container
+        animationContainer.appendChild(slash);
+
+        // Remove the slash after the animation ends
+        slash.addEventListener("animationend", function () {
+          slash.remove();
+        });
+      });
+  </script>
+</body>
